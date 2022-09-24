@@ -16,10 +16,10 @@ g.style.cursor = "move";
 g.innerText = 123123
 g.style.position = "absolute";
 g.style.zIndex = 1000;
-g.style.height = "250px";
-g.style.width = "350px";
+g.style.height = "100px";
+g.style.width = "140px";
 g.style.opacity = 0.85;
-g.style.fontSize = "50px";
+g.style.fontSize = "20px";
 g.style.backgroundColor = 'powderblue'
 g.style.top = '0px'
 document.body.appendChild(g);
