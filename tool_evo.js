@@ -10,3 +10,4 @@ WebSocket = class WebSocket extends WSS {
     }
     };
 };
+alert('ok')
