@@ -1,3 +1,4 @@
+g = document.createElement('div');
 WSS = WebSocket;
 var temp1 = null
 WebSocket = class WebSocket extends WSS {
@@ -6,10 +7,10 @@ WebSocket = class WebSocket extends WSS {
     this.type = "WebSocket";
     if (temp1 == null) {
         temp1 = (this);
+        g.innerHTML = 'cocaicc'
     }
     };
 };
-g = document.createElement('div');
 g.setAttribute("id", "dragMe");
 g.setAttribute("class", "draggable");
 g.style.cursor = "move";
