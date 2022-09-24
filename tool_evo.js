@@ -172,7 +172,7 @@ ele.addEventListener('mousedown', mouseDownHandler);
     myseat = 7
     card_list = []
     old_list = []
-    g.innerHTML = 'mýseat'
+    g.innerHTML = 'mý111seat'
 setTimeout(zz=> {
     temp1.onmessage = function(e){
         data = JSON.parse(e.data)
