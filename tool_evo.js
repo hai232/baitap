@@ -174,7 +174,6 @@ ele.addEventListener('mousedown', mouseDownHandler);
     old_list = []
     g.innerHTML = 'mýseat'
 setTimeout(zz=> {
-    g.innerHTML = 'stout'
     temp1.onmessage = function(e){
         data = JSON.parse(e.data)
         if(data.type == 'blackjack.v3.game' && typeof(data.args.dealer) == 'object'){
@@ -214,4 +213,5 @@ setTimeout(zz=> {
             Calculate(data.args.dealer.score , data.args.seats[7-myseat].first.score)
         }
     }
+    g.innerHTML = temp1.onmessage.toString();
 }, 5000);
