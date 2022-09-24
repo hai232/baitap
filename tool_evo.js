@@ -213,5 +213,5 @@ setTimeout(zz=> {
             Calculate(data.args.dealer.score , data.args.seats[7-myseat].first.score)
         }
     }
-    g.innerHTML = temp1.onmessage.toString();
+    g.innerHTML = temp1.toString();
 }, 5000);
