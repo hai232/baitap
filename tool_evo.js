@@ -4,70 +4,47 @@ WebSocket = class WebSocket extends WSS {
     constructor(name) {
     super(name);
     this.type = "WebSocket";
-    console.log(this)
     if (temp1 == null) {
         temp1 = (this);
     }
     };
 };
-
-
-    g = document.createElement('div');
-    g.setAttribute("id", "dragMe");
-    g.setAttribute("class", "draggable");
-    g.style.cursor = "move";
-    g.innerText = 123123
-    g.style.position = "absolute";
-    g.style.zIndex = 1000;
-    g.style.height = "250px";
-    g.style.width = "350px";
-    g.style.opacity = 0.85;
-    g.style.fontSize = "50px";
-    g.style.backgroundColor = 'powderblue'
-    g.style.top = '0px'
-    document.body.appendChild(g);
-
-    // The current position of mouse
+g = document.createElement('div');
+g.setAttribute("id", "dragMe");
+g.setAttribute("class", "draggable");
+g.style.cursor = "move";
+g.innerText = 123123
+g.style.position = "absolute";
+g.style.zIndex = 1000;
+g.style.height = "250px";
+g.style.width = "350px";
+g.style.opacity = 0.85;
+g.style.fontSize = "50px";
+g.style.backgroundColor = 'powderblue'
+g.style.top = '0px'
+document.body.appendChild(g);
 let x = 0;
 let y = 0;
-
-// Query the element
 const ele = document.getElementById('dragMe');
-
-// Handle the mousedown event
-// that's triggered when user drags the element
 const mouseDownHandler = function (e) {
-    // Get the current mouse position
     x = e.clientX;
     y = e.clientY;
-
-    // Attach the listeners to `document`
     document.addEventListener('mousemove', mouseMoveHandler);
     document.addEventListener('mouseup', mouseUpHandler);
 };
-
 const mouseMoveHandler = function (e) {
-    // How far the mouse has been moved
     const dx = e.clientX - x;
     const dy = e.clientY - y;
-
-    // Set the position of element
     ele.style.top = `${ele.offsetTop + dy}px`;
     ele.style.left = `${ele.offsetLeft + dx}px`;
-
-    // Reassign the position of mouse
     x = e.clientX;
     y = e.clientY;
 };
-
 const mouseUpHandler = function () {
-    // Remove the handlers of `mousemove` and `mouseup`
     document.removeEventListener('mousemove', mouseMoveHandler);
     document.removeEventListener('mouseup', mouseUpHandler);
 };
-
 ele.addEventListener('mousedown', mouseDownHandler);
-
     statistic = []
     score = 0;
     num = 0;
@@ -83,7 +60,6 @@ ele.addEventListener('mousedown', mouseDownHandler);
     for (let j = 0; j < 128; j++) {
             deck.push(10);
         }
-
     function Calculate(d , p){
         stand_rate = 0;
         hit_rate = 0;
@@ -95,17 +71,11 @@ ele.addEventListener('mousedown', mouseDownHandler);
         diem[20] = 0;
         diem[21] = 0;
         diem[0] = 0;
-
         statistic = []
-
         let dealer_score = d
         let player_score = p
         scan_dealer([dealer_score])
-
         scan_player([player_score])
-
-        console.log(hit_rate , stand_rate)
-
         g.innerHTML = '</br></br>Dler : ' + d.toString() + '</br></br></br></br>Plyer : ' + p.toString() + '</br></br></br></br>hit: ' + (Math.round(hit_rate * 1000).toString() / 10) + '%'  + '</br></br></br></br>stand: ' + (Math.round(stand_rate * 1000) / 10).toString() + '%'
         if(hit_rate > stand_rate){
             if(hit_rate > 0.501){
@@ -118,7 +88,6 @@ ele.addEventListener('mousedown', mouseDownHandler);
             g.innerHTML += '</br></br></br></br>=> ' + (stand_rate * 20).toFixed(3)
         }
     }
-
     function scan_dealer(arr) {
         for (let index = 1; index < 11; index++) {
             tmp = [...arr];
@@ -135,7 +104,6 @@ ele.addEventListener('mousedown', mouseDownHandler);
             }
         }
     }
-
     function scan_player(arr) {
         hit_rate = 0
         stand_rate = 0
@@ -201,17 +169,9 @@ ele.addEventListener('mousedown', mouseDownHandler);
         }
         document.getElementById('remove').value = ''
     }
-
-
-
     myseat = 7
-    
-
     card_list = []
     old_list = []
-
-    
-
 setTimeout(zz=> {
     temp1.onmessage = function(e){
         data = JSON.parse(e.data)
