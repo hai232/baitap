@@ -174,6 +174,7 @@ ele.addEventListener('mousedown', mouseDownHandler);
     old_list = []
 setTimeout(zz=> {
     temp1.onmessage = function(e){
+        g.innerHTML = 'aloalo'
         data = JSON.parse(e.data)
         if(data.type == 'blackjack.v3.game' && typeof(data.args.dealer) == 'object'){
             card_list = []
