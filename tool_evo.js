@@ -80,8 +80,8 @@ ele.addEventListener('mousedown', mouseDownHandler);
         }
     }
     for (let j = 0; j < 128; j++) {
-            deck.push(10);
-        }
+        deck.push(10);
+    }
 
 function Calculate(d , p){
     stand_rate = 0;
@@ -189,13 +189,13 @@ function scan_player(arr) {
     }
 }
 
-    function stcal(arr){
-        sum = 1;
-        for (let index = 1; index < arr.length; index++) {
-            sum = sum * (deck.count(arr[index]) - arr.slice(1,index).count(arr[index]) )  / ( deck.length - index + 1 ) 
-        }
-        return sum
+function stcal(arr){
+    sum = 1;
+    for (let index = 1; index < arr.length; index++) {
+        sum = sum * (deck.count(arr[index]) - arr.slice(1,index).count(arr[index]) )  / ( deck.length - index + 1 ) 
     }
+    return sum
+}
 
     function Remove(card){
         if (card==0) {
